@@ -4,7 +4,7 @@
 % finite difference schemes.
 
 T = 2*pi;
-h = 0.1;
+h = 1;
 t = [0:h:T];
 
 A = [0,1;-1,0];
@@ -58,6 +58,7 @@ legend('FE', 'BE', 'Trapezoidal','ODE45', 'Exact')
 legend('Location', 'southeast')
 xlabel('x')
 ylabel('y')
+axis([-2.5 2.5 -2.5 2.5])
 hold off
 
 figure(2)
