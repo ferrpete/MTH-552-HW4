@@ -32,7 +32,8 @@ for i=2:length(t)
     
     uFE(:,i) = uFE(:,i-1) + h*A*uFE(:,i-1);
     uBE(:,i) = (eye(2,2) - h*A)\uBE(:,i-1);
-    uTrapz(:,i) = (eye(2,2) - (h/2)*A)\(uTrapz(:,i-1) + (h/2)*A*uTrapz(:,i-1));
+    uTrapz(:,i) = (eye(2,2) - (h/2)*A)\(uTrapz(:,i-1) +...
+        (h/2)*A*uTrapz(:,i-1));
     
     errFE(i) = norm(uExact(:,i)-uFE(:,i),'inf');
     errBE(i) = norm(uExact(:,i)-uBE(:,i),'inf');
